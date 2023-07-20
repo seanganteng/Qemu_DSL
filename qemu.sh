@@ -56,5 +56,5 @@ else
 fi
 
 
-qemu-system-x86_64 -m $ram -smp $core -hda /data/data/com.termux/files/home/qemu/disk.img -cdrom /data/data/com.termux/files/home/qemu/dsl-4.11.rc2.iso -device rtl8139,netdev=net0 -netdev user,id=net0
+qemu-system-x86_64 -m $ram -smp $core -hda /data/data/com.termux/files/home/Qemu_Install/disk.img -cdrom /data/data/com.termux/files/home/Qemu_Install/dsl-4.11.rc2.iso -device rtl8139,netdev=net0 -netdev user,id=net0
 
