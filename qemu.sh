@@ -7,9 +7,10 @@ sleep 5s
 apt update -y
 apt upgrade -y
 
-apt-get install x11-repo
-apt-get install qemu-system-x86-64-headless
-apt-get install qemu-utils
+apt-get install x11-repo -y
+apt-get install qemu-system-x86-64-headless -y
+apt-get install qemu-utils -y
+apt-get install wget -y
 
 read -p "Create Disk (5GB, 10GB, 20GB): " disk
 
