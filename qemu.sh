@@ -17,15 +17,15 @@ read -p "Create Disk (5GB, 10GB, 20GB): " disk
 case "$disk" in
   [5]GB | [5][gG][bB])
     echo "Create 5GB Disk"
-    qemu-img create -f raw disk.img 5G
+    qemu-img create -f qcow2 disk.qcow2 5G
     ;;
   [1][0]GB | [1][0][gG][bB])
     echo "Create 10GB Disk"
-    qemu-img create -f raw disk.img 10G
+    qemu-img create -f qcow2 disk.qcow2 10G
     ;;
   [2][0]GB | [2][0][gG][bB])
     echo "Create 20GB Disk"
-    qemu-img create -f raw disk.img 20G
+    qemu-img create -f qcow2 disk.qcow2 20G
     ;;
   *)
     echo "ERROR :("
@@ -56,5 +56,5 @@ else
 fi
 
 
-qemu-system-x86_64 -m $ram -smp $core -hda /data/data/com.termux/files/home/Qemu_Install/disk.img -cdrom /data/data/com.termux/files/home/Qemu_Install/dsl-4.11.rc2.iso -device rtl8139,netdev=net0 -netdev user,id=net0 -vnc localhost:1
+qemu-system-x86_64 -m $ram -smp $core -hda /data/data/com.termux/files/home/Qemu_Install/disk.qcow2 -cdrom /data/data/com.termux/files/home/Qemu_Install/dsl-4.11.rc2.iso -device rtl8139,netdev=net0 -netdev user,id=net0 -vnc localhost:1
 
